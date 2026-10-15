@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW Sunshine Cleaning | Premium Residential & Commercial Cleaning - Fort Myers, FL</title>
+    <meta name="description" content="A fresh approach to cleaning for your home and everyday spaces in Fort Myers, Florida. Professional, reliable, and tailored cleaning services.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#07101E',
+                            800: '#0B192C',
+                            700: '#1E3E62',
+                            600: '#2A5282',
+                        },
+                        sunshine: {
+                            500: '#F5B031',
+                            600: '#E5A93C',
+                            700: '#D48C00',
+                            800: '#B37400',
+                        },
+                        cream: '#FAFAF8',
+                        skytint: '#F0F4F8'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Luxury Styling & Animations */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAFAF8;
+            color: #1E293B;
+            overflow-x: hidden;
+        }
+
+        .font-serif-luxury {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .glass-navy {
+            background: rgba(11, 25, 44, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F5B031 0%, #D48C00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(229, 169, 60, 0.25);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 20px 40px -15px rgba(11, 25, 44, 0.07);
+        }
+
+        .custom-shadow-hover:hover {
+            box-shadow: 0 25px 50px -12px rgba(11, 25, 44, 0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Pulse animation for CTA accent */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+
+        .pulse-accent {
+            animation: subtlePulse 4s infinite ease-in-out;
+        }
+
+        /* Editable highlight styling */
+        [contenteditable="true"] {
+            outline: 2px dashed #E5A93C;
+            outline-offset: 4px;
+            border-radius: 4px;
+            padding: 2px 4px;
+            background-color: rgba(229, 169, 60, 0.05);
+        }
+
+        /* Range Slider Styling */
+        input[type=range] {
+            accent-color: #E5A93C;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between">
+
+    <!-- TOP DEMO BAR / CLIENT PRESENTATION NOTICE -->
+    <div id="demoHeader" class="bg-navy-900 text-white text-xs md:text-sm py-2 px-4 border-b border-sunshine-600/30 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-center sm:text-left">
+                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-sunshine-600/20 text-sunshine-500 font-semibold text-[11px] uppercase tracking-wider">
+                    <i class="fa-solid fa-laptop-code text-xs"></i> Concept Demo
+                </span>
+                <span class="text-slate-300">Interactive Proposal Created for <strong class="text-white">SW Sunshine Cleaning</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="toggleEditBtn" onclick="toggleEditMode()" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded text-xs font-medium transition flex items-center gap-1.5 border border-white/10">
+                    <i class="fa-solid fa-pen-to-square text-sunshine-500"></i>
+                    <span id="editBtnText">Enable Editing Mode</span>
+                </button>
+                <button onclick="showProposalModal()" class="px-3 py-1 bg-sunshine-600 hover:bg-sunshine-700 text-navy-900 font-bold rounded text-xs transition">
+                    <i class="fa-solid fa-file-contract"></i> Client Notes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <header class="sticky top-[37px] z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-navy-800 flex items-center justify-center text-sunshine-500 shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-sun text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="block font-serif-luxury text-2xl font-bold tracking-tight text-navy-900 leading-none">
+                            SW Sunshine
+                        </span>
+                        <span class="block text-[10px] font-bold tracking-widest text-sunshine-700 uppercase mt-0.5">
+                            Cleaning Services
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#hero" class="text-sm font-medium text-slate-700 hover:text-navy-900 transition">Home</a>
+                    <a href="#services" class="text-sm font-medium text-slate-700 hover:text-navy-900 transition">Proposed Services</a>
+                    <a href="#benefits" class="text-sm font-medium text-slate-700 hover:text-navy-900 transition">Why Choose Us</a>
+                    <a href="#how-it-works" class="text-sm font-medium text-slate-700 hover:text-navy-900 transition">Process</a>
+                    <a href="#estimate" class="text-sm font-medium text-slate-700 hover:text-navy-900 transition">Get Estimate</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-700 hover:text-navy-900 transition">Contact</a>
+                </nav>
+
+                <!-- Phone CTA & Estimate Button -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+12392009442" class="flex items-center gap-2 text-sm font-bold text-navy-900 hover:text-sunshine-700 transition">
+                        <div class="w-8 h-8 rounded-full bg-skytint flex items-center justify-center text-navy-800">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </div>
+                        <span>+1 239-200-9442</span>
+                    </a>
+                    <a href="#estimate" class="px-5 py-2.5 bg-navy-800 hover:bg-navy-900 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-sparkles text-sunshine-500 text-xs"></i>
+                        Request Estimate
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-navy-900 p-2 rounded-lg hover:bg-slate-100 text-xl focus:outline-none" aria-label="Toggle Navigation">
+                    <i id="mobileMenuIcon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-50">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-50">Proposed Services</a>
+            <a href="#benefits" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-50">Why Choose Us</a>
+            <a href="#how-it-works" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-50">Process</a>
+            <a href="#estimate" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-50">Get Estimate</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slate-800">Contact</a>
+            
+            <div class="pt-2 space-y-2">
+                <a href="tel:+12392009442" class="w-full py-3 bg-skytint text-navy-900 font-bold rounded-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone text-sunshine-700"></i> Call +1 239-200-9442
+                </a>
+                <a href="#estimate" onclick="toggleMobileMenu()" class="w-full py-3 bg-navy-800 text-white font-bold rounded-lg text-center block shadow">
+                    Request an Estimate
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 via-skytint/40 to-white">
+        <!-- Ambient Decorative Glows -->
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-sunshine-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-navy-700/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Location Indicator Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-navy-800 mx-auto lg:mx-0">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <i class="fa-solid fa-location-dot text-sunshine-700"></i>
+                        <span class="editable-field">Fort Myers, Florida 33967 & Surrounding Areas</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold text-navy-900 tracking-tight leading-[1.15]">
+                        A Brighter, Cleaner Space <span class="gold-gradient-text italic font-normal">Starts Here.</span>
+                    </h1>
+
+                    <!-- Supporting Text -->
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Discover a fresh approach to cleaning for your home and everyday spaces in Fort Myers, Florida. Tailored visits, meticulous detail, and a commitment to brilliant care.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#estimate" class="w-full sm:w-auto px-8 py-4 bg-navy-800 hover:bg-navy-900 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3 group">
+                            <span>Request an Estimate</span>
+                            <i class="fa-solid fa-arrow-right text-sunshine-500 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+
+                        <a href="tel:+12392009442" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-navy-900 font-bold rounded-xl border border-slate-200 shadow-sm transition flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone text-sunshine-700"></i>
+                            <span>Call Our Team</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Trust Highlights / Badges -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-200/60 max-w-xl mx-auto lg:mx-0 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-sunshine-500/15 flex items-center justify-center text-sunshine-700 shrink-0">
+                                <i class="fa-solid fa-house-sparkles text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wide">Tailored</h4>
+                                <p class="text-xs text-slate-500">Customized Plans</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-navy-800/10 flex items-center justify-center text-navy-800 shrink-0">
+                                <i class="fa-solid fa-shield-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wide">Reliable</h4>
+                                <p class="text-xs text-slate-500">Consistent Quality</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-700 shrink-0">
+                                <i class="fa-solid fa-sun text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wide">Local</h4>
+                                <p class="text-xs text-slate-500">Fort Myers FL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hero Right Image Frame with Floating UI Badges -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        
+                        <!-- Glowing Backdrop Shadow -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-sunshine-600/30 to-navy-700/20 rounded-3xl transform rotate-3 scale-105 blur-lg"></div>
+
+                        <!-- Main Image Container -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Spotless luxury interior in Fort Myers, FL" 
+                                 class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent"></div>
+
+                            <!-- Image Bottom Overlay Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 glass-navy p-4 rounded-2xl text-white flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-sunshine-600 flex items-center justify-center text-navy-900 font-bold">
+                                        <i class="fa-solid fa-broom"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-300 uppercase tracking-wider font-semibold">Fort Myers Quality</p>
+                                        <p class="text-sm font-bold">Pristine Sunshine Finish</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full border border-white/20">Residential & More</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge Top Right -->
+                        <div class="absolute -top-6 -right-6 glass-card p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 max-w-[200px] border border-white/80 animate-bounce-slow">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-sparkles text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-navy-900">Fresh Atmosphere</p>
+                                <p class="text-[11px] text-slate-500">Detailed sanitize & dust</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPOSED SERVICES SECTION -->
+    <section id="services" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunshine-500/10 text-sunshine-800 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-list-check"></i> Proposed Service Menu
+                </div>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900">
+                    Comprehensive Cleaning Options
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Tailored solutions designed to keep every corner of your Fort Myers property immaculate. <span class="text-xs block text-slate-400 mt-1 italic">(Note: Specific service menu subject to confirmation by business owner)</span>
+                </p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="group bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Standard Home Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-navy-900/80 backdrop-blur-md text-sunshine-500 text-xs px-3 py-1 rounded-full font-semibold">
+                                Routine Care
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-sunshine-500/10 text-sunshine-700 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-house text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-sunshine-700 transition-colors">Standard Home Cleaning</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Regular scheduled maintenance to keep living rooms, bedrooms, and general areas consistently dust-free, vacuumed, and refreshed.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Flexible Scheduling</span>
+                        <button onclick="selectServiceForEstimate('Standard Home Cleaning')" class="text-xs font-bold text-navy-900 hover:text-sunshine-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Select Option <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80" alt="Deep Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-sunshine-600 text-navy-900 text-xs px-3 py-1 rounded-full font-bold">
+                                Comprehensive
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-navy-800/10 text-navy-800 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-spray-can-sparkles text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-sunshine-700 transition-colors">Deep Cleaning</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                An intensive top-to-bottom detail scrub focusing on baseboards, hidden dust, built-up grime, light fixtures, and neglected spaces.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Seasonal or First-Time</span>
+                        <button onclick="selectServiceForEstimate('Deep Cleaning')" class="text-xs font-bold text-navy-900 hover:text-sunshine-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Select Option <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Move-In / Move-Out Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-navy-900/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-semibold">
+                                Transition Care
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-box-open text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-sunshine-700 transition-colors">Move-In / Move-Out</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Complete turnaround cleaning for homebuyers, tenants, landlords, and real estate agents ensuring spaces are pristine for occupancy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Empty Property Focus</span>
+                        <button onclick="selectServiceForEstimate('Move-In / Move-Out Cleaning')" class="text-xs font-bold text-navy-900 hover:text-sunshine-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Select Option <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Office & Commercial Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-navy-900/80 backdrop-blur-md text-sunshine-500 text-xs px-3 py-1 rounded-full font-semibold">
+                                Workspaces
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-sunshine-500/10 text-sunshine-700 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-building text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-sunshine-700 transition-colors">Office & Commercial</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Maintain a healthy, welcoming environment for your staff and clients. Custom schedules for small offices, studios, and shops.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Professional Setup</span>
+                        <button onclick="selectServiceForEstimate('Office & Commercial Cleaning')" class="text-xs font-bold text-navy-900 hover:text-sunshine-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Select Option <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Kitchen & Bathroom Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-navy-900/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-semibold">
+                                High-Touch Areas
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-navy-800/10 text-navy-800 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-sink text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-sunshine-700 transition-colors">Kitchen & Bathroom Focus</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Target the spaces that matter most. Thorough sanitization of countertops, sinks, appliances exterior, showers, tubs, and tiles.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Hygienic Scrub</span>
+                        <button onclick="selectServiceForEstimate('Kitchen & Bathroom Cleaning')" class="text-xs font-bold text-navy-900 hover:text-sunshine-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Select Option <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden custom-shadow custom-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Recurring Cleaning Visits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-sunshine-600 text-navy-900 text-xs px-3 py-1 rounded-full font-bold">
+                                Best Value
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-sunshine-500/10 text-sunshine-700 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-calendar-check text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-sunshine-700 transition-colors">Recurring Cleaning Visits</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Enjoy effortless ongoing cleanliness with weekly, bi-weekly, or monthly automated schedules tailored to your routine.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Weekly / Bi-Weekly</span>
+                        <button onclick="selectServiceForEstimate('Recurring Cleaning Visits')" class="text-xs font-bold text-navy-900 hover:text-sunshine-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Select Option <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST & BENEFITS SECTION -->
+    <section id="benefits" class="py-20 bg-navy-900 text-white relative overflow-hidden">
+        <!-- Subtle Pattern Overlay -->
+        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#E5A93C_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Title & Intro -->
+                <div class="lg:col-span-5 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-sunshine-500 text-xs font-bold uppercase tracking-wider border border-white/10">
+                        <i class="fa-solid fa-gem"></i> The Sunshine Standard
+                    </div>
+                    <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                        Elevating Everyday Living in Fort Myers
+                    </h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        We believe a clean space provides clarity, comfort, and peace of mind. Every visit is guided by our commitment to thoroughness and respect for your home.
+                    </p>
+                    <div class="pt-4">
+                        <a href="tel:+12392009442" class="inline-flex items-center gap-3 px-6 py-3 bg-sunshine-600 hover:bg-sunshine-700 text-navy-900 font-bold rounded-xl transition">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Speak Directly with Our Team</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Grid of Benefits -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <div class="p-6 rounded-2xl glass-navy border border-white/10 hover:border-sunshine-600/40 transition">
+                        <div class="w-12 h-12 rounded-xl bg-sunshine-600/20 text-sunshine-500 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-magnifying-glass-sparkles"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white">Attention to Detail</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            We don't just sweep the surface; we address corners, edges, and high-frequency touchpoints often missed in standard routines.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-navy border border-white/10 hover:border-sunshine-600/40 transition">
+                        <div class="w-12 h-12 rounded-xl bg-sunshine-600/20 text-sunshine-500 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-clock flex"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white">Seamless Scheduling</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Designed around your active life. Simple coordination, prompt arrival, and flexible visit intervals tailored to you.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-navy border border-white/10 hover:border-sunshine-600/40 transition">
+                        <div class="w-12 h-12 rounded-xl bg-sunshine-600/20 text-sunshine-500 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white">Fresh Living Spaces</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Experience the crisp, clean feeling of coming home to spotless surfaces, clear floors, and a light atmosphere.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-navy border border-white/10 hover:border-sunshine-600/40 transition">
+                        <div class="w-12 h-12 rounded-xl bg-sunshine-600/20 text-sunshine-500 flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white">Personalized Plans</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Every home is unique. We adapt to your specific preferences, property layout, and custom priorities.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="py-20 bg-skytint/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-800/10 text-navy-900 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-route"></i> Simple Process
+                </div>
+                <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900">
+                    How Our Service Works
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Three straightforward steps to an effortless, brilliant space.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                
+                <!-- Connector Line for Desktop -->
+                <div class="hidden md:block absolute top-1/2 left-1/6 right-1/6 h-0.5 bg-slate-200 -translate-y-6 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm relative z-10 text-center flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-navy-800 text-sunshine-500 font-serif-luxury text-2xl font-bold flex items-center justify-center shadow-lg mb-6">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Share Your Needs</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Fill out our brief online estimate form below or call us directly with details about your home or commercial space.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm relative z-10 text-center flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-sunshine-600 text-navy-900 font-serif-luxury text-2xl font-bold flex items-center justify-center shadow-lg mb-6">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Discuss Your Plan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We review your request, discuss specific cleaning priorities, and outline a custom schedule tailored to your lifestyle.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm relative z-10 text-center flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-navy-800 text-sunshine-500 font-serif-luxury text-2xl font-bold flex items-center justify-center shadow-lg mb-6">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Confirm & Enjoy</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Confirm details directly with our local Fort Myers team, lock in your visit date, and relax in a beautifully maintained space.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ESTIMATE REQUEST FORM -->
+    <section id="estimate" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Form Sidebar Info & Dynamic Estimator Widget -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunshine-500/10 text-sunshine-800 text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-calculator"></i> Custom Estimate
+                        </span>
+                        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-navy-900 leading-tight">
+                            Request Your Personalized Cleaning Quote
+                        </h2>
+                        <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            Provide a few details about your property in Fort Myers or nearby communities, and our team will get back to you promptly.
+                        </p>
+                    </div>
+
+                    <!-- Indicative Price Calculator Box -->
+                    <div class="p-6 rounded-2xl bg-navy-800 text-white space-y-5 shadow-xl border border-navy-700">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-sunshine-500">Indicative Guide</span>
+                            <span class="text-[11px] bg-white/10 px-2 py-0.5 rounded text-slate-300">Non-binding Preview</span>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-medium mb-1">
+                                    <span class="text-slate-300">Property Size:</span>
+                                    <span id="sqftValue" class="text-sunshine-500 font-bold">1,800 sq. ft.</span>
+                                </div>
+                                <input type="range" id="sqftSlider" min="500" max="5000" step="100" value="1800" oninput="updatePriceEstimate()" class="w-full h-2 bg-navy-900 rounded-lg appearance-none cursor-pointer">
+                            </div>
+
+                            <div class="flex justify-between items-center pt-2">
+                                <div>
+                                    <p class="text-xs text-slate-400">Estimated Starting Range</p>
+                                    <p class="text-[10px] text-slate-500">*Final rate confirmed by business owner</p>
+                                </div>
+                                <div class="text-right">
+                                    <span id="priceRange" class="font-serif-luxury text-2xl font-bold text-sunshine-500">$140 - $180</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3 rounded-lg bg-white/5 border border-white/5 text-[11px] text-slate-300 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-info text-sunshine-500 mt-0.5"></i>
+                            <span>Estimates vary based on initial deep cleans, layout complexity, and specialized add-ons.</span>
+                        </div>
+                    </div>
+
+                    <!-- Direct Contact Callout -->
+                    <div class="p-6 rounded-2xl bg-skytint border border-slate-200 space-y-3">
+                        <h4 class="font-bold text-navy-900 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-headset text-sunshine-700"></i>
+                            Prefer to speak right now?
+                        </h4>
+                        <p class="text-xs text-slate-600">
+                            Give us a call directly to discuss your scheduling needs and questions.
+                        </p>
+                        <a href="tel:+12392009442" class="inline-flex items-center gap-2 text-sm font-bold text-navy-900 hover:text-sunshine-700 transition">
+                            <i class="fa-solid fa-phone text-xs"></i> +1 239-200-9442
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Actual Interactive Form -->
+                <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 custom-shadow">
+                    
+                    <form id="estimateForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <!-- Full Name -->
+                            <div>
+                                <label for="fullName" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
+                                    Full Name <span class="text-rose-500">*</span>
+                                </label>
+                                <input type="text" id="fullName" required placeholder="Jane Doe" 
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sunshine-600 focus:ring-2 focus:ring-sunshine-600/20 outline-none transition text-sm">
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div>
+                                <label for="phone" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
+                                    Phone Number <span class="text-rose-500">*</span>
+                                </label>
+                                <input type="tel" id="phone" required placeholder="(239) 000-0000" 
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sunshine-600 focus:ring-2 focus:ring-sunshine-600/20 outline-none transition text-sm">
+                            </div>
+
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <!-- Email Address -->
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
+                                    Email Address <span class="text-rose-500">*</span>
+                                </label>
+                                <input type="email" id="email" required placeholder="jane@example.com" 
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sunshine-600 focus:ring-2 focus:ring-sunshine-600/20 outline-none transition text-sm">
+                            </div>
+
+                            <!-- Property Type -->
+                            <div>
+                                <label for="propertyType" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
+                                    Property Type
+                                </label>
+                                <select id="propertyType" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sunshine-600 focus:ring-2 focus:ring-sunshine-600/20 outline-none transition text-sm bg-white">
+                                    <option value="Single Family Home">Single Family Home</option>
+                                    <option value="Condo / Apartment">Condo / Apartment</option>
+                                    <option value="Commercial / Office">Commercial / Office Space</option>
+                                    <option value="Vacation Rental">Vacation Rental / Airbnb</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <!-- Requested Service -->
+                            <div>
+                                <label for="serviceType" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
+                                    Requested Service
+                                </label>
+                                <select id="serviceType" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sunshine-600 focus:ring-2 focus:ring-sunshine-600/20 outline-none transition text-sm bg-white">
+                                    <option value="Standard Home Cleaning">Standard Home Cleaning</option>
+                                    <option value="Deep Cleaning">Deep Cleaning</option>
+                                    <option value="Move-In / Move-Out Cleaning">Move-In / Move-Out Cleaning</option>
+                                    <option value="Office & Commercial Cleaning">Office & Commercial Cleaning</option>
+                                    <option value="Kitchen & Bathroom Focus">Kitchen & Bathroom Focus</option>
+                                    <option value="Recurring Cleaning Visits">Recurring Cleaning Visits</option>
+                                </select>
+                            </div>
+
+                            <!-- Preferred Date -->
+                            <div>
+                                <label for="preferredDate" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
+                                    Preferred Service Date
+                                </label>
+                                <input type="date" id="preferredDate" 
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sunshine-600 focus:ring-2 focus:ring-sunshine-600/20 outline-none transition text-sm bg-white">
+                            </div>
+
+                        </div>
+
+                        <!-- Special Notes -->
+                        <div>
+                            <label for="notes" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
+                                Property Details / Priorities
+                            </label>
+                            <textarea id="notes" rows="4" placeholder="Mention bedrooms/bathrooms count, pet preferences, or specific focus areas..." 
+                                      class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sunshine-600 focus:ring-2 focus:ring-sunshine-600/20 outline-none transition text-sm"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit" class="w-full py-4 bg-navy-800 hover:bg-navy-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-sunshine-500"></i>
+                                <span>Submit Estimate Request</span>
+                            </button>
+                            <p class="text-[11px] text-center text-slate-400 mt-3">
+                                <i class="fa-solid fa-lock text-[10px]"></i> Concept Demo Mode: Submitting will generate a simulated success response.
+                            </p>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION HUB -->
+    <section id="contact" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Info Details -->
+                <div class="lg:col-span-6 space-y-8">
+                    <div>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sunshine-600/20 text-sunshine-500 text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-location-dot"></i> Business Hub
+                        </span>
+                        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-white">
+                            SW Sunshine Cleaning
+                        </h2>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Proudly serving Fort Myers, Florida and surrounding communities.
+                        </p>
+                    </div>
+
+                    <!-- Direct Details Cards -->
+                    <div class="space-y-4">
+                        
+                        <div class="p-5 rounded-2xl glass-navy border border-white/10 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sunshine-600 text-navy-900 flex items-center justify-center text-lg font-bold shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Phone Support</h4>
+                                <a href="tel:+12392009442" class="text-lg font-bold text-white hover:text-sunshine-500 transition block mt-0.5">
+                                    +1 239-200-9442
+                                </a>
+                                <p class="text-xs text-slate-400 mt-1">Tap to call directly</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl glass-navy border border-white/10 flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sunshine-600 text-navy-900 flex items-center justify-center text-lg font-bold shrink-0 mt-1">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Primary Location</h4>
+                                <p class="text-base font-bold text-white mt-0.5 editable-field">
+                                    Fort Myers, Florida 33967, USA
+                                </p>
+                                <div class="mt-2 flex flex-wrap gap-2">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=SW+Sunshine+Cleaning+Fort+Myers+FL" target="_blank" rel="noopener noreferrer" class="text-xs text-sunshine-500 hover:underline inline-flex items-center gap-1 font-semibold">
+                                        View on Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    </a>
+                                    <span class="text-slate-600">•</span>
+                                    <a href="https://www.bizarchive.com/business/sw-sunshine-cleaning-239-200-9442" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:underline inline-flex items-center gap-1 font-semibold">
+                                        Directory Listing <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours Widget (Editable Template) -->
+                        <div class="p-5 rounded-2xl glass-navy border border-white/10">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-regular fa-clock text-sunshine-500"></i> Operating Hours
+                                </h4>
+                                <span class="text-[10px] bg-sunshine-500/20 text-sunshine-500 px-2 py-0.5 rounded font-semibold">Editable Template</span>
+                            </div>
+                            <div class="space-y-1.5 text-xs text-slate-300">
+                                <div class="flex justify-between border-b border-white/5 pb-1">
+                                    <span class="editable-field">Monday - Friday</span>
+                                    <span class="font-bold text-white editable-field">8:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="flex justify-between border-b border-white/5 pb-1">
+                                    <span class="editable-field">Saturday</span>
+                                    <span class="font-bold text-white editable-field">By Appointment</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="editable-field">Sunday</span>
+                                    <span class="font-bold text-slate-400 editable-field">Closed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Visual Map Card Representation -->
+                <div class="lg:col-span-6 flex flex-col">
+                    <div class="bg-navy-800 rounded-3xl p-6 border border-white/10 flex-grow flex flex-col justify-between relative overflow-hidden">
+                        
+                        <div class="space-y-4 relative z-10">
+                            <h3 class="text-xl font-bold text-white">Fort Myers & Coastal Service Coverage</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Serving residential homes, condos, and commercial properties throughout Fort Myers and surrounding Southwest Florida communities.
+                            </p>
+                        </div>
+
+                        <!-- Stylized Map Graphic Box -->
+                        <div class="my-6 rounded-2xl bg-navy-900 border border-white/10 p-8 text-center space-y-4 relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#E5A93C_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                            
+                            <div class="w-16 h-16 rounded-full bg-sunshine-600/20 border-2 border-sunshine-500 text-sunshine-500 flex items-center justify-center text-2xl mx-auto pulse-accent relative z-10">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div class="relative z-10">
+                                <p class="text-sm font-bold text-white">SW Sunshine Cleaning Area</p>
+                                <p class="text-xs text-slate-400">Zip Code: 33967 & Vicinity</p>
+                            </div>
+
+                            <a href="https://www.google.com/maps/search/?api=1&query=SW+Sunshine+Cleaning+Fort+Myers+FL" target="_blank" rel="noopener noreferrer" 
+                               class="inline-block px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-semibold transition relative z-10">
+                                Open Google Maps Search
+                            </a>
+                        </div>
+
+                        <div class="text-[11px] text-slate-400 text-center relative z-10">
+                            Confirm exact service range directly with the business owner upon inquiry.
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-slate-400 text-xs border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <!-- Logo & Name -->
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-navy-800 text-sunshine-500 flex items-center justify-center text-lg font-bold border border-white/10">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif-luxury text-xl font-bold text-white block leading-none">SW Sunshine Cleaning</span>
+                        <span class="text-[10px] text-slate-400">Fort Myers, Florida 33967</span>
+                    </div>
+                </div>
+
+                <!-- Quick Nav -->
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-300">
+                    <a href="#hero" class="hover:text-sunshine-500 transition">Home</a>
+                    <a href="#services" class="hover:text-sunshine-500 transition">Proposed Services</a>
+                    <a href="#benefits" class="hover:text-sunshine-500 transition">Why Choose Us</a>
+                    <a href="#estimate" class="hover:text-sunshine-500 transition">Get Estimate</a>
+                    <a href="#contact" class="hover:text-sunshine-500 transition">Contact</a>
+                </div>
+
+                <!-- Call Button -->
+                <a href="tel:+12392009442" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold transition flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-sunshine-500 text-xs"></i>
+                    <span>+1 239-200-9442</span>
+                </a>
+
+            </div>
+
+            <!-- Disclaimer Box -->
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5 text-[11px] leading-relaxed text-slate-400 text-center md:text-left">
+                <strong>Independent Proposal Concept Notice:</strong> This website concept is an independent presentation demo built to demonstrate web design capabilities for <em>SW Sunshine Cleaning</em> (Fort Myers, FL). It has not been commissioned or officially endorsed by the business. All proposed services, pricing guides, and operating hours are editable default suggestions subject to review and confirmation by the business owner.
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 gap-2 border-t border-white/5 pt-6">
+                <p>&copy; <span id="year"></span> SW Sunshine Cleaning Demo Concept. All rights reserved.</p>
+                <p>Designed for Professional Web Presentation</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- FIXED MOBILE QUICK CALL BUTTON -->
+    <div class="md:hidden fixed bottom-4 right-4 z-40">
+        <a href="tel:+12392009442" class="w-14 h-14 rounded-full bg-sunshine-600 text-navy-900 shadow-2xl flex items-center justify-center text-xl font-bold gold-glow border-2 border-white">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- PROPOSAL NOTES MODAL -->
+    <div id="proposalModal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 relative shadow-2xl">
+            <button onclick="closeProposalModal()" class="absolute top-4 right-4 text-slate-400 hover:text-navy-900 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-sunshine-500/20 text-sunshine-700 flex items-center justify-center text-lg font-bold">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy-900">Client Proposal Notes</h3>
+                    <p class="text-xs text-slate-500">Key Features Built into This Website</p>
+                </div>
+            </div>
+
+            <ul class="space-y-3 text-xs text-slate-600">
+                <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                    <span><strong>Accurate Contact Info:</strong> Integrated real phone (+1 239-200-9442) and Fort Myers, FL location links.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                    <span><strong>Interactive Price Calculator:</strong> Allows clients to preview estimated starting ranges based on sq. ft.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                    <span><strong>Live Text Customization:</strong> Click "Enable Editing Mode" in the top bar to test live inline text updates for client pitches.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                    <span><strong>Mobile Optimized:</strong> Built with sticky quick-call buttons and full touch responsiveness.</span>
+                </li>
+            </ul>
+
+            <button onclick="closeProposalModal()" class="w-full py-3 bg-navy-800 text-white text-xs font-bold rounded-xl hover:bg-navy-900 transition">
+                Close Notes & Explore Website
+            </button>
+        </div>
+    </div>
+
+    <!-- FORM CONFIRMATION MODAL -->
+    <div id="formModal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center space-y-4 relative shadow-2xl">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-navy-900">Demo Estimate Received</h3>
+            
+            <p class="text-slate-600 text-xs leading-relaxed">
+                Thank you! This request demonstrates the live interactive form flow. In a live production deployment, this will send an instant email or SMS notification directly to the business owner.
+            </p>
+
+            <div class="p-3 bg-slate-50 rounded-xl text-left text-xs space-y-1 text-slate-600 border border-slate-200">
+                <p><strong>Property Size:</strong> <span id="modalSqft"></span> sq ft</p>
+                <p><strong>Selected Service:</strong> <span id="modalService"></span></p>
+            </div>
+
+            <button onclick="closeFormModal()" class="w-full py-3 bg-sunshine-600 text-navy-900 text-xs font-bold rounded-xl hover:bg-sunshine-700 transition">
+                Return to Demo Website
+            </button>
+        </div>
+    </div>
+
+    <!-- VANILLA JS INTERACTION LOGIC -->
+    <script>
+        // Dynamic Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Navigation Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        }
+
+        // Live Customization / Edit Mode Toggle
+        let isEditMode = false;
+        function toggleEditMode() {
+            isEditMode = !isEditMode;
+            const fields = document.querySelectorAll('.editable-field, h1, h2, p');
+            const btnText = document.getElementById('editBtnText');
+            
+            fields.forEach(field => {
+                if(isEditMode) {
+                    field.setAttribute('contenteditable', 'true');
+                } else {
+                    field.removeAttribute('contenteditable');
+                }
+            });
+
+            if(isEditMode) {
+                btnText.textContent = 'Disable Editing Mode';
+                alert('Inline Editing Enabled! You can now click on headings or text to customize them for your presentation.');
+            } else {
+                btnText.textContent = 'Enable Editing Mode';
+            }
+        }
+
+        // Interactive Price Estimator
+        function updatePriceEstimate() {
+            const sqft = document.getElementById('sqftSlider').value;
+            document.getElementById('sqftValue').textContent = parseInt(sqft).toLocaleString() + ' sq. ft.';
+            
+            // Basic indicative math logic
+            const minPrice = Math.round(sqft * 0.08 + 30);
+            const maxPrice = Math.round(sqft * 0.10 + 50);
+            
+            document.getElementById('priceRange').textContent = `$${minPrice} - $${maxPrice}`;
+        }
+
+        // Pre-select service from service cards
+        function selectServiceForEstimate(serviceName) {
+            const select = document.getElementById('serviceType');
+            select.value = serviceName;
+            
+            // Scroll smoothly to estimate section
+            document.getElementById('estimate').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const sqft = document.getElementById('sqftSlider').value;
+            const service = document.getElementById('serviceType').value;
+
+            document.getElementById('modalSqft').textContent = parseInt(sqft).toLocaleString();
+            document.getElementById('modalService').textContent = service;
+
+            document.getElementById('formModal').classList.remove('hidden');
+        }
+
+        function closeFormModal() {
+            document.getElementById('formModal').classList.add('hidden');
+            document.getElementById('estimateForm').reset();
+        }
+
+        // Proposal Modal Trigger
+        function showProposalModal() {
+            document.getElementById('proposalModal').classList.remove('hidden');
+        }
+
+        function closeProposalModal() {
+            document.getElementById('proposalModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
